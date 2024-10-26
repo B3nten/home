@@ -1,0 +1,6 @@
+*.com
+!redbean-3.0.0.com
+.bin
+.DS_Store
+.idea
+.vscode
