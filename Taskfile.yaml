@@ -1,7 +1,7 @@
 version: '3'
 
 vars:
-  site: 'benton.com'
+  site: 'benton.codes'
 
 tasks:
   peek:
@@ -10,20 +10,15 @@ tasks:
   clean:
     cmds:
       - rm -f {{.site}} && cp redbean-3.0.0.com {{.site}} && chmod +x ./{{.site}}
-  dev:
-    cmds:
-      - task: build
-      - task: run
   run:
     cmds:
-      - chmod +x ./{{.site}}
       - sh -c ./{{.site}}
   build:
     cmds:
+      - task: clean
       - cd src && zip -R ../{{.site}} '*.lua' '*.html' '*.js' '*.css'
       - zip -R {{.site}} static/*
-  deploy:
+  dev:
     cmds:
-      - task: clean
       - task: build
       - task: run

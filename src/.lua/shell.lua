@@ -10,14 +10,14 @@ local function Shell (props)
 					"three": "/static/three@0.169.0/mod.js,
 				}
 			}]],
-			props.head
+			props.Head
 		},
 		Body {
 			Navigation {
 
 			},
 			Main {
-				props.body
+				props.Body
 			},
 			Footer {
 				Text { "© 2021", class = "footer-text" }
